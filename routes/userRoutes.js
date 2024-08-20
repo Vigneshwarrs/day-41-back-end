@@ -82,7 +82,7 @@ routes.post('/forgot-password', async (req, res) => {
         const token = await user.generateResetToken();
 
         // Send reset password email
-        const resetUrl = `http://localhost:3000/reset-password?token=${token}`;
+        const resetUrl = `https://authentication-app-guvi.netlify.app/reset-password?token=${token}`;
         const message = `Hi there,\nWe received a request to reset your password. Please click the link below to reset it: ${resetUrl}\nIf you did not request a password reset, please ignore this email.\nBest,\nYour Team`;
 
         await sendEmail(email, 'Reset Password', message);
